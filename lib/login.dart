@@ -93,6 +93,7 @@ class _LoginPageState extends State<LoginPage> {
                       borderRadius: BorderRadius.circular(12),
                     ),
                   ),
+                  // mengecek apakah form sudah terisi atau belum, jika belum maka akan muncul peringatan
                   onPressed: () {
                     if (_usernameController.text.isNotEmpty &&
                         _passwordController.text.isNotEmpty) {

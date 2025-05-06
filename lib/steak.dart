@@ -57,6 +57,7 @@ class _SteakPageState extends State<SteakPage> {
         ),
         body: const SingleChildScrollView(
           child: Column(
+            // menampilkan gambar beserta judul, fav button dan deskripsi menu
             children: [
               ImageSection(image: 'images/steak.jpg'),
               TitleSection(
@@ -103,10 +104,12 @@ class TitleSection extends StatelessWidget {
       padding: const EdgeInsets.all(32),
       child: Row(
         children: [
+          // untuk memperluas widget agar mengisi ruang kosong dalam Row atau Colomn
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                // memberikan padding dan mengatur font
                 Padding(
                   padding: const EdgeInsets.only(bottom: 8),
                   child: Text(
@@ -161,6 +164,7 @@ class _FavoriteButtonState extends State<FavoriteButton> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          // memberi icon dan mengatur warna, ukuran, dan function ketika di klik
           IconButton(
             icon: Icon(
               _isFavorite ? Icons.favorite : Icons.favorite_border,
@@ -179,7 +183,6 @@ class _FavoriteButtonState extends State<FavoriteButton> {
     );
   }
 }
-
 
 // widget untuk menamplkan deskripsi dan mengatur jarak
 class TextSection extends StatelessWidget {
@@ -203,6 +206,7 @@ class ImageSection extends StatelessWidget {
   final String image;
 
   @override
+  // mengatur ukuran gambar
   Widget build(BuildContext context) {
     return Image.asset(image, width: 600, height: 240, fit: BoxFit.cover);
   }

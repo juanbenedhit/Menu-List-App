@@ -11,12 +11,10 @@ class NuggetsPage extends StatefulWidget {
   State<NuggetsPage> createState() => _NuggetsPageState();
 }
 
-
 // state untuk nuggets, tempat dan mengelola state dari nuggets
 class _NuggetsPageState extends State<NuggetsPage> {
   static const String appTitle = 'Golden Crunch Nuggets';
   int _selectedIndex = 0;
-
 
   // function untuk mengatur bottom navigation bar
   void _onItemTapped(int index) {
@@ -59,6 +57,7 @@ class _NuggetsPageState extends State<NuggetsPage> {
         ),
         body: const SingleChildScrollView(
           child: Column(
+            // menampilkan gambar beserta judul, fav button dan deskripsi menu
             children: [
               ImageSection(image: 'images/nuggets.jpg'),
               TitleSection(
@@ -106,10 +105,12 @@ class TitleSection extends StatelessWidget {
       padding: const EdgeInsets.all(32),
       child: Row(
         children: [
+          // untuk memperluas widget agar mengisi ruang kosong dalam Row atau Colomn
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                // memberikan padding dan mengatur font
                 Padding(
                   padding: const EdgeInsets.only(bottom: 8),
                   child: Text(
@@ -137,7 +138,6 @@ class TitleSection extends StatelessWidget {
   }
 }
 
-
 // state untuk mengelola favorit
 class FavoriteButton extends StatefulWidget {
   const FavoriteButton({super.key});
@@ -158,8 +158,7 @@ class _FavoriteButtonState extends State<FavoriteButton> {
     });
   }
 
-
-  // mengatur tampilan icon, warna, dan mengatur font   
+  // mengatur tampilan icon, warna, dan mengatur font
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -167,6 +166,7 @@ class _FavoriteButtonState extends State<FavoriteButton> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          // memberi icon dan mengatur warna, ukuran, dan function ketika di klik
           IconButton(
             icon: Icon(
               _isFavorite ? Icons.favorite : Icons.favorite_border,
@@ -209,6 +209,7 @@ class ImageSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // mengatur ukuran gambar
     return Image.asset(image, width: 600, height: 240, fit: BoxFit.cover);
   }
 }
